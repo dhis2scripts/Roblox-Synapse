@@ -9,36 +9,63 @@ window.closeIframe = function () {
 };
 
 var ifrm;
+var useIframe = false;
 // Function to open the popup window
 function openIcdPopup(olsdata) {
-    var urlparts = window.location.pathname.split("/");
-    var indexidx = urlparts.findIndex((p) => p === "index.html");
-    var baseurl = window.location.origin + urlparts.slice(0, indexidx - 1).join("/");
-    console.log("go to mccod");
+    if (useIframe) {
+        var urlparts = window.location.pathname.split("/");
+        var indexidx = urlparts.findIndex((p) => p === "index.html");
+        var baseurl = window.location.origin + urlparts.slice(0, indexidx - 1).join("/");
+        console.log("go to mccod");
 
 
-    console.log("olsdata", olsdata);
-    localStorage.setItem("mcodtemp", JSON.stringify(olsdata));
+        console.log("olsdata", olsdata);
+        //add iframe data to local storage for prefilling the form
+        localStorage.setItem("mcodtemp", JSON.stringify(olsdata));
 
-    ifrm = document.createElement("iframe");
-    ifrm.setAttribute("src", baseurl + "/api/apps/Medical-Certificate-of-Cause-of-Death/index.html");
-    ifrm.style.width = "calc(100% - 40px)";
-    ifrm.style.minHeight = "640px";
-    ifrm.style.position = "absolute";
-    ifrm.style.top = "10px";
-    ifrm.style.left = "20px";
-    ifrm.style.border = "1px solid black";
-    ifrm.style.boxShadow = "2px 4px 12px 9px rgba(0,0,0,0.4)";
+        //prepare the Iframe
+        ifrm = document.createElement("iframe");
+        ifrm.setAttribute("src", baseurl + "/api/apps/Medical-Certificate-of-Cause-of-Death/index.html");
+        ifrm.style.width = "calc(100% - 40px)";
+        ifrm.style.minHeight = "640px";
+        ifrm.style.position = "absolute";
+        ifrm.style.top = "10px";
+        ifrm.style.left = "20px";
+        ifrm.style.border = "1px solid black";
+        ifrm.style.boxShadow = "2px 4px 12px 9px rgba(0,0,0,0.4)";
 
-    console.log("iff", ifrm);
-    document.body.appendChild(ifrm);
+        console.log("iff", ifrm);
+        // display the iframe
+        document.body.appendChild(ifrm);
 
-    ifrm.onload = function () {
-        var iframeDocument = ifrm.contentDocument || ifrm.contentWindow.document;
-        var headerElement = iframeDocument.getElementById("root").querySelector("header");
-        headerElement.style.display = "none";
-    };
+        ifrm.onload = function () {
+            // remove dhis2 header
+            var iframeDocument = ifrm.contentDocument || ifrm.contentWindow.document;
+            var headerElement = iframeDocument.getElementById("root").querySelector("header");
+            headerElement.style.display = "none";
+        };
+    }else {
+        //generate url query params
+        const urlQueryParams = objectToQueryString(olsdata);
+        const targetBaseUrl = "https://ug.sk-engine.cloud/hmis"
+        const appUrl = `${targetBaseUrl}/api/apps/Medical-Certificate-of-Cause-of-Death/index.html`
+        const targetSystemUrl = `${appUrl}?${urlQueryParams}`
+        const popupName = 'Medical-Certificate-of-Cause-of-Death'; // Optional - specify a name for the popup window
+        const width = 1000; // Optional - specify the width of the popup window
+        const height = 640; // Optional - specify the height of the popup window
+        // Open the popup window
+        const popup = window.open(targetSystemUrl, popupName, `width=${width}, height=${height}`);
+        if (popup) {
+            // The popup was successfully opened
+            // You can perform further actions or manipulate the popup here
+        } else {
+            // The popup was blocked by the browser or there was an error
+            // You may want to inform the user or handle this case gracefully
+            console.log('Popup was blocked or an error occurred.');
+        }
+    }
 }
+
 
 // Function to check if the form is in view
 var timeoutId;
