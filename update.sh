@@ -13,7 +13,8 @@ if ! git ls-remote --exit-code "https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.co
 fi
 
 # Ask the user for the DHIS2 version
-read -p "Enter the DHIS2 version (e.g. 2.40 etc.): " dhis2_version
+# read -p "Enter the DHIS2 version (e.g. 2.40 etc.): " dhis2_version
+local dhis2_version="$1"
 
 # Check if the branch exists in the GitHub repository
 if ! git ls-remote --exit-code --heads "https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/dhis2scripts/icdiframe.git" "$dhis2_version" &> /dev/null; then
