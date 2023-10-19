@@ -31,7 +31,7 @@ if [ "$lxc_choice" == "yes" ]; then
     # Copy and replace .js files inside the LXC container
 
    # Run the command inside the LXC container to find the first matching file
-first_matching_file=$(lxc exec "$container_name" -- /bin/bash -c "directory='/var/lib/tomcat9/webapps/$container_name/dhis-web-tracker-capture/'; first_matching_file=\$(find \"\$directory\" -type f -name 'app-*.js' | head -n 1); echo \"\$first_matching_file\"")
+   first_matching_file=$(lxc exec "$container_name" -- /bin/bash -c "directory='/var/lib/tomcat9/webapps/$container_name/dhis-web-tracker-capture/'; first_matching_file=\$(find \"\$directory\" -type f -name 'app-*.js' | head -n 1); echo \"\$first_matching_file\"")
 
 # Check if a matching file was found in the container
 if [ -n "$first_matching_file" ]; then
